@@ -3,6 +3,9 @@
     margin: 0;
     box-sizing: border-box;
 }
+button{
+    cursor: pointer;
+}
 .header{
     max-width: 1200px;
     margin: 44px auto 26px;
@@ -70,6 +73,14 @@
     border: none;
     margin-top: 35px;
     padding: 16px 26px;
+    transition: background-color 200ms ease-in-out, transform 250ms;
+    &:hover{
+        background-color: color-mix(in oklab, #FFFFFF, black 10%);
+        transform: scale(1.05);
+    }
+    &:active{
+        background-color: #34303a;
+    }
 }
 .companies{
     max-width: 1200px;
@@ -225,9 +236,19 @@
 .change__button{
     border: none;
     border-radius: 50%;
-    color: #F4F6F6;
+    background-color: #F4F6F6;
     width: 40px;
     height: 40px;
+    transition: background-color 250ms ease-in-out, transform 250ms;
+    &:hover{
+        transform: scale(1.05);
+    }
+    &:active:not(:disabled){
+        background-color: #34303a;
+    }
+    &:disabled{
+        cursor: no-drop;
+    }
 }
 .cards__container{
     display: flex;
@@ -251,6 +272,7 @@
         font-size: 24px;
         margin-left: 24px;
         color: #154444;
+        display: inline;
     }
 }
 .card{
@@ -265,16 +287,29 @@
     gap: 8px;
     margin-top: -25px;
     margin-right: 24px;
+    margin-bottom: 20px;
     button{
         border: none;
+        img{
+            width: 10px;
+            height: 10px;
+        }
         border-radius: 50%;
         width: 26px;
         height: 26px;
         background-color: #ECF4FF;
+        transition: background-color 250ms ease-in-out, transform 250ms;
+        &:hover{
+            transform: scale(1.05);
+            background-color: #EF5423;
+        }
+        &:active{
+            background-color: #34303a;
+        }
     }
-}
-.active:hover{
-    background-color: #EF5423;
+    .active{
+        background-color: #EF5423;
+    }
 }
 .buy-button{
     display: flex;
@@ -290,6 +325,13 @@
         font-weight: 500;
         font-size: 12px;
         color: #FFFFFF;
+        transition: background-color 250ms ease-in-out, transform 250ms;
+        &:hover{
+            transform: scale(1.05);
+        }
+        &:active{
+            background-color: #34303a;
+        }
     }
 }
 .furniture__container{
@@ -369,6 +411,7 @@
     justify-content: center;
     align-items: center;
     border: 1.5px solid #D9DCE5;
+    cursor: pointer;
     p{
         font-family: "DM Sans", sans-serif;
         font-weight: 500;
@@ -388,6 +431,7 @@
     p{
         color: #FFFFFF;
     }
+    background-color: #154444;
 }
 .customers__container{
     max-width: 1200px;
@@ -489,23 +533,33 @@
         color: #FFFFFF;
         margin-right: 18px;
         background-color: #305F64;
+        transition: background-color 200ms ease-in-out, transform 250ms;
+        &:hover{
+            background-color: color-mix(in oklab, #305F64, black 10%);
+            transform: scale(1.05);
+        }
+        &:active{
+            background-color: #34303a;
+        }
     }
 }
 .footer{
-    max-width: 1440px;
     display: flex;
-    margin: 140px auto;
+    margin: 140px auto 0;
     height: 442px;
     background-color: #305F64;
     flex-direction: column;
 }
 .footer__container{
     display: flex;
+    gap: 108px;
     justify-content: space-between;
+    margin: 0 auto;
+    max-width: 1200px;
+    width: 100%;
 }
 .footer-info{
     margin-top: 100px;
-    margin-left: 120px;
     h1{
         font-family: "Montserrat", sans-serif;
         font-size: 24px;
@@ -566,7 +620,6 @@
     margin-left: 100px;
 }
 .footer__subscribe{
-    margin-right: 120px;
     margin-top: 100px;
     h4{
         font-family: "Montserrat", sans-serif;
@@ -613,6 +666,14 @@
             height: 16px;
             margin: 6px;
         }
+        transition: background-color 200ms ease-in-out, transform 250ms;
+        &:hover{
+            background-color: color-mix(in oklab, #FFB624, black 10%);
+            transform: scale(1.05);
+        }
+        &:active{
+            background-color: #34303a;
+        }
     }
 }
 .copyright{
@@ -624,6 +685,6 @@
         font-size: 18px;
         color: #FFFFFF;
         margin-top: 20px;
-        margin-left: 569px;
+        text-align: center;
     }
 }
